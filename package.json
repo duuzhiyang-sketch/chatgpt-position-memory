@@ -1,0 +1,17 @@
+{
+  "name": "position-memory",
+  "version": "0.1.1",
+  "private": true,
+  "description": "独立的 ChatGPT 对话阅读位置记忆 Chrome 扩展",
+  "license": "UNLICENSED",
+  "scripts": {
+    "icons": "node scripts/generate-icons.js",
+    "check": "node --check src/shared/core.js && node --check src/background.js && node --check src/content.js && node --check src/popup/popup.js && node --check scripts/build.js && node --check scripts/generate-icons.js && node --check scripts/verify-dist.js",
+    "test": "node --test tests/*.test.js",
+    "build": "node scripts/build.js && node scripts/verify-dist.js",
+    "verify": "npm run check && npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

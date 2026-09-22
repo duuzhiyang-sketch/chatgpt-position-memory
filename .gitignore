@@ -1,0 +1,26 @@
+dist-chrome/
+node_modules/
+.DS_Store
+coverage/
+
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+cookies*.json
+auth.json
+storage-state*.json
+
+# Personal tooling, browser data, and diagnostic exports
+.codex/
+.vscode/
+.idea/
+browser-profile/
+screenshots/
+*.har
+*.log
