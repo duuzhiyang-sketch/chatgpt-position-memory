@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>位置记忆</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <main class="shell">
+        <header class="header">
+            <div class="mark" aria-hidden="true">
+                <span></span>
+            </div>
+            <div>
+                <h1>位置记忆</h1>
+                <p>自动运行，无需点击</p>
+            </div>
+        </header>
+
+        <section class="settings" aria-label="功能设置">
+            <label class="setting-row">
+                <span>
+                    <strong>自动记忆与恢复</strong>
+                    <small>默认开启，按每个对话分别保存</small>
+                </span>
+                <input id="enabled" type="checkbox" role="switch">
+            </label>
+            <label class="setting-row">
+                <span>
+                    <strong>显示恢复提示</strong>
+                    <small>恢复后显示短暂通知</small>
+                </span>
+                <input id="showRestoreNotice" type="checkbox" role="switch">
+            </label>
+        </section>
+
+        <section class="status-card" aria-labelledby="statusTitle">
+            <div class="status-heading">
+                <h2 id="statusTitle">当前页面</h2>
+                <span id="countBadge" class="badge">0 个记录</span>
+            </div>
+            <p id="statusText" aria-live="polite">正在检查…</p>
+            <p id="savedAt" class="saved-at"></p>
+        </section>
+
+        <div class="actions">
+            <button id="clearCurrent" type="button" disabled>清除当前对话记录</button>
+            <button id="clearAll" class="danger" type="button">清除全部记录</button>
+        </div>
+
+        <footer>数据只保存在此 Chrome 浏览器中</footer>
+    </main>
+
+    <script src="../shared/core.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
